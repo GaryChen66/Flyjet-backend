@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Flight_Backend.Models.FlightSearch>
+
+@{
+    ViewData["Title"] = "Flight Search";
+}
+
+<h1>Flight Search Result</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TravelerPrices)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Itineraries)
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td class="total_price">
+                @Html.DisplayFor(modelItem => item.GetOutput_TotalPrice)
+            </td>
+            <td class="traveler_price">
+                @Html.Raw("<pre>" + Html.Encode(item.GetOutput_TravelPrices) + "</pre>")
+            </td>
+            <td class="itineraries">
+                @Html.Raw("<pre>" + Html.Encode(item.GetOutput_Itineraries) + "</pre>")
+            </td>
+            <td>
+                <a asp-action="Book">Book</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

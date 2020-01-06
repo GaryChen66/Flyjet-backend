@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Flight Search Page";
+}
+
+<h1>Flight Search and Booking</h1>
+<br />
+<form asp-controller="Flight" asp-action="Search" method="post">
+    <input type="radio" id="one-way" name="flight_type" />
+    <label for="one-way">One Way</label>
+
+    <input type="radio" id="round-trip" name="flight_type" checked />
+    <label for="round-trip">Round Trip</label>
+
+    <br />
+    <input type="checkbox" id="charter-aircraft" name="charter_aircraft" />
+    <label for="charter-aircraft">Book Charter Aircraft</label>
+
+    &nbsp;&nbsp;
+    <input type="checkbox" id="charter-seat" name="charter_seat" />
+    <label for="charter-seat">Book Charter Seat</label>
+    &nbsp;&nbsp;
+    <input type="checkbox" id="commercial-seat" name="commercial_seat" />
+    <label for="commercial-seat">Book Commercial Seat</label>
+
+    <br />
+    <br />
+    
+    <div id="departure_div">
+        <input placeholder="TAKE OFF" name="departure" id="departure" value="SYD"/>
+        <ul id="departure_result"></ul>
+    </div>
+    <div id="arrival_div">
+        <input placeholder="LAND" name="arrival" id="arrival" value="BKK" />
+        <ul id="arrival_result"></ul>
+    </div>
+    <br />
+    <br />
+
+    <label>FROM:</label>
+    <input type="date" name="from"  value="2020-01-08" />&nbsp;&nbsp;
+    <label>TO:</label>
+    <input type="date" name="to" value="2020-01-12" />
+    <br /><br />
+    <label>Adults:</label>
+    <input type="number" value="2" name="adults"/>&nbsp;&nbsp;
+    <label>Children:</label>
+    <input type="number" value="0" name="children" />&nbsp;&nbsp;
+    <label>Infants:</label>
+    <input type="number" value="0" name="infants" />
+    <br /><br />
+    <label>Travel Class:</label>
+    <select name="travelClass">
+        <option value="FIRST">First class</option>
+        <option value="BUSINESS">Business class</option>
+        <option value="ECONOMY">Economy class</option>
+        <option value="PREMIUM_ECONOMY">Premium economy class</option>
+    </select>&nbsp;&nbsp;
+    <input type="checkbox" id="nonStop" name="nonStop" />
+    <label for="nonStop">None stop</label>
+    <br /><br />
+    <input type="submit" value="   G  O    " />
+</form>
