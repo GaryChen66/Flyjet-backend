@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\Bee\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Bee\\.nuget\\packages"
-    ]
-  }
-}
