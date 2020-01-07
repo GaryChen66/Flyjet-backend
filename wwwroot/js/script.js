@@ -47,13 +47,21 @@
         });
     });
     $("body").on("click", "#departure_result li", function () {
-        $("#departure").val($(this).attr("id"));
+        $("#departure").val($(this).text());
+        $("#departure").attr("data", $(this).attr("id"));
     });
     $("body").on("click", "#arrival_result li", function () {
-        $("#arrival").val($(this).attr("id"));
+        $("#arrival").val($(this).text());
+        $("#arrival").attr("data", $(this).attr("id"));
     });
     $("body").click(function () {
         $("#departure_result").html("");
         $("#arrival_result").html("");
+    });
+    $("form").on("submit", function (event) {
+        //event.preventDefault();
+        $('input[name="departure"]').val($('input[name="departure"]').attr('data'));
+        $('input[name="arrival"]').val($('input[name="arrival"]').attr('data'));
+        $("form").submit();
     });
 });

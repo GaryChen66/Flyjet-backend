@@ -76,10 +76,13 @@ input[type="number"]{
     width: 10%;
 }
 .traveler_price{
-    width: 25%;
+    width: 15%;
 }
 .itineraries{
-    width: 70%;
+    width: 60%;
+}
+.action {
+    width: 15%;
 }
 #departure {
     width: 300px;

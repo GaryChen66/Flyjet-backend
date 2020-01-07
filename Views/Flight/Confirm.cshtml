@@ -1,0 +1,37 @@
+﻿@model Flight_Backend.Models.FlightSearch
+
+@{
+    ViewData["Title"] = "Confirm";
+}
+
+<h1>Price Confirmation</h1>
+
+<div>
+    <h4>Flight Information</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GetOutput_TotalPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TravelerPrices)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.Raw("<pre>" + Html.Encode(Model.GetOutput_TravelPrices) + "</pre>")
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Itineraries)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.Raw("<pre>" + Html.Encode(Model.GetOutput_Itineraries) + "</pre>")
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Book" asp-route-id="@Model.Id">Continue Booking</a> | 
+    <a asp-action="Search">Back to List</a> 
+</div>
+

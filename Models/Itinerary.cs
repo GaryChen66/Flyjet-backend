@@ -18,5 +18,6 @@ namespace Flight_Backend.Models
         public string arrival_country { get; set; }
 
         public string aircraft { get; set; }
+        public string airline { get; set; }
     }
 }
